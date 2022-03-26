@@ -3,17 +3,26 @@ import { CreateUserDto } from './user.dto';
 import { User_Profile } from './user.entity';
 import { UserService } from './user.service';
 
+@Controller('login')
+export class UserLogin_Controller {
+  @Inject(UserService)
+  private readonly service: UserService;
+  
+  @Post()
+  public loginUser(@Body() body): Promise<boolean> {
+    return this.service.loginUser(body);
+  }
+}
+
 @Controller('join')
-export class UserController {
+export class UserCreator_Controller {
   @Inject(UserService)
   private readonly service: UserService;
 
   @Post()
-  public createUser(@Body() body): Promise<User_Profile> {
-//   public createUser(@Body() body: CreateUserDto): Promise<User_Profile> {
+  public createUser(@Body() body): Promise<boolean> {
     console.log("toto");
     console.log(body.username);
-    //   console.log(toto);
     return this.service.createUser_Profile(body);
   }
 

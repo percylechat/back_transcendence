@@ -12,3 +12,12 @@ export class CreateUserDto {
   @IsOptional()
   public avatar: string;
 }
+
+export class LoginUserDto {
+  @IsString()
+  @IsNotEmpty()
+  public username: string;
+  @IsString()
+  @IsNotEmpty()
+  public password: string;
+}
