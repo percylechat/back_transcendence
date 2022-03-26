@@ -1,15 +1,15 @@
 import requests
-import json
 
+# REQUEST Join
+# payload = {'username': 'bebechat', 'password': 'dedete', 'avatar': '""'}
+# r = requests.post("http://localhost:3000/join/", json=payload)
+# print (r.url)
+# print(r.text)
+# print (payload)
 
-payload = {'username': 'bebechat', 'password': 'dedete', 'avatar': '""'}
-# headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-r = requests.post("http://localhost:3000/join/", json=payload)
-
-
-# payload = {'username': '"bebechat"', 'password': '"dedete"', 'avatar': '""'}
-# r = requests.post("http://localhost:3000/join", params=payload)
+# REQUEST login
+payload = {'username': 'bechat', 'password': 'dedete'}
+r = requests.post("http://localhost:3000/login/", json=payload)
 print (r.url)
 print(r.text)
 print (payload)
-# print (r.json)
