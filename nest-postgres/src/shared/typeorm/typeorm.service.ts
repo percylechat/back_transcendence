@@ -9,12 +9,8 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
 
   public createTypeOrmOptions(): TypeOrmModuleOptions {
     return {
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      database: 'db_transcendence',
-      username: 'admin_db',
-      password: 'admin',
+      type: 'sqlite',
+      database: 'db_transcendence.sqlite',
       entities: ['dist/**/*.entity.{ts,js}'],
       migrations: ['dist/migrations/*.{ts,js}'],
       migrationsTableName: 'typeorm_migrations',
